@@ -1,0 +1,63 @@
+body,
+html,
+* {
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.wrapper {
+    background-color: #EEEEEE;
+    border-radius: 10px;
+    width: 25%;
+}
+
+.inner-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    gap: 10px;
+}
+
+.form-child {
+    display: flex;
+    flex-direction: column;
+}
+
+/* book section */
+.book-section {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-radius: 5px;
+    margin-top: 8px;
+}
+
+.book-actions {
+    display: flex;
+    column-gap: 5px;
+}
+
+.book-button {
+    width: 100%;
+    height: 100%;
+}
+
+input {
+    padding: 5px;
+}
+
+
+.author {
+    font-size: 0.8em;
+}
