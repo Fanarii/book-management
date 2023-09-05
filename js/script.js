@@ -35,14 +35,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const redoButton = bookDiv.querySelector('.redo-button');
         const removeButton = bookDiv.querySelector('.remove-button');
 
+        removeButton.addEventListener('click', () => {
+            removeBook(book);
+        });
+
         if (isReaded) {
             redoButton.addEventListener('click', () => {
                 markAsUndone(book);
             });
 
-            removeButton.addEventListener('click', () => {
-                removeBook(book);
-            });
         } else {
             doneButton.addEventListener('click', () => {
                 markBookAsDone(book);
