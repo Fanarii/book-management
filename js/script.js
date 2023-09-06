@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const unreadList = document.querySelector('#unread');
     const readedList = document.querySelector('#readed');
     const dateInput = document.querySelector('#date');
+    const checkInput = document.querySelector('#checkbox')
 
     const storedBooks = JSON.parse(localStorage.getItem('books')) || [];
 
@@ -131,9 +132,20 @@ document.addEventListener('DOMContentLoaded', () => {
         return +new Date();
     }
 
+    let checkbox = false;
+
+    checkInput.addEventListener('change', () => {
+        if (checkInput.checked) {
+            checkbox = true;
+        }
+        else {
+            checkbox = false;
+        }
+    })
+
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-
+        
         const bookTitle = title.value;
         const bookAuthor = author.value;
         const dateValue = dateInput.value;
@@ -150,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: bookTitle,
             author: bookAuthor,
             year: year,
-            isComplete: false
+            isComplete: checkbox
         };
 
         title.value = '';
